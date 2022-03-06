@@ -9,7 +9,7 @@
     "resetFolder": "rimraf dist/*",
     "compile": "next build && tsc",
     "build": "next build && tsc",
-    "start": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "node dist/index.js",
     "lint": "eslint \"**/*.{vue,ts,tsx,js}\""
   },
   "repository": {
@@ -32,14 +32,12 @@
     "@types/react-dom": "^17.0.13",
     "eslint": "^8.10.0",
     "npm-run-all": "^4.1.5",
-    "rimraf": "^3.0.2",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.5.5"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
     "@koa/router": "^10.1.1",
-    "cross-env": "^7.0.3",
     "koa": "^2.13.4",
     "next": "^12.1.0",
     "react": "^17.0.2",
