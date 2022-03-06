@@ -10,7 +10,8 @@
     "compile": "next build && tsc",
     "build": "next build && tsc",
     "start": "node dist/index.js",
-    "lint": "eslint \"**/*.{vue,ts,tsx,js}\""
+    "lint": "eslint \"**/*.{vue,ts,tsx,js}\"",
+    "vercel-build": "node dist/index.js"
   },
   "repository": {
     "type": "git",
