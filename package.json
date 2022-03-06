@@ -8,7 +8,7 @@
     "dev": "ts-node-dev --respawn src/index.ts",
     "resetFolder": "rimraf dist/*",
     "compile": "next build && tsc",
-    "build": "npm-run-all resetFolder compile",
+    "build": "rimraf dist/* && next build && tsc",
     "start": "cross-env NODE_ENV=production node dist/index.js",
     "lint": "eslint \"**/*.{vue,ts,tsx,js}\""
   },
