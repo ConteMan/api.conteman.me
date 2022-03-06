@@ -3,7 +3,7 @@ import next from 'next'
 import Router from '@koa/router'
 import cors from '@koa/cors'
 
-const port = parseInt(process.env.PORT, 10) || 80
+const port = parseInt(process.env.PORT as string, 10) || 80
 const dev = process.env.NODE_ENV !== 'production'
 
 const app = next({ dev })
@@ -16,8 +16,8 @@ app.prepare().then(() => {
     const res = await fetch('https://api.isconte.com/ones/random', {
       method: 'GET',
       headers: {
-        'x-user-agent': 'conte-world-f'
-      }
+        'x-user-agent': 'conte-world-f',
+      },
     }).then((res: any) => res.json())
     ctx.body = res.data
   })
@@ -27,7 +27,7 @@ app.prepare().then(() => {
     ctx.status = 301
   })
 
-  server.use(async (ctx, next) => {
+  server.use(async(ctx, next) => {
     ctx.res.statusCode = 200
     await next()
   })
@@ -35,6 +35,7 @@ app.prepare().then(() => {
   server.use(cors())
   server.use(router.routes())
   server.listen(port, () => {
+    // eslint-disable-next-line no-console
     console.log(`> Ready on http://localhost:${port} as ${dev ? 'development' : process.env.NODE_ENV}`)
   })
 })
