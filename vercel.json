@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "headers": [
         { "key": "Access-Control-Allow-Credentials", "value": "true" },
         { "key": "Access-Control-Allow-Origin", "value": "*" },
@@ -12,6 +12,8 @@
   ],
   "rewrites": [
     { "source": "/", "destination": "/api" },
-    { "source": "/status", "destination": "/api/status" }
+    { "source": "/status", "destination": "/api/status" },
+    { "source": "/bgm", "destination": "/api/bgm" },
+    { "source": "/bgm/callback", "destination": "/api/bgm/callback" }
   ]
 }
